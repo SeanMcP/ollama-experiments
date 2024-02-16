@@ -1,0 +1,740 @@
+========== 2024-02-16 13:53:38 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Identify the following items from the review text: 
+- Sentiment (positive or negative)
+- Is the reviewer expressing anger? (true or false)
+- Item purchased by reviewer
+- Company that made the item
+
+The review is delimited with triple backticks. Format your response as a JSON object with "Sentiment", "Anger", "Item" and "Brand" as the keys.
+If the information isn't present, use "unknown" as the value.
+Make your response as short as possible.
+Format the Anger value as a boolean.
+
+Review text: '''
+Needed a nice lamp for my bedroom, and this one had additional storage and not too high of a price point. Got it fast.  The string to our lamp broke during the transit and the company happily sent over a new one. Came within a few days as well. It was easy to put together.  I had a missing part, so I contacted their support and they very quickly got me the missing piece! Lumina seems to me to be a great company that cares about their customers and products!!
+'''
+
+	completion: {
+"Sentiment": "Positive",
+"Anger": false,
+"Item": "lamp",
+"Brand": "Lumina"
+}
+
+========== 2024-02-16 13:57:08 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Summarize the following article in a single sentence. Provide a tl;dr that captures the essence of the article and style of the author.
+
+This summary will be displayed and used for SEO purposes, so balance the outputbetween being informative and engaging.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: In this article, the author shares their experience of teaching their five-year-old son how to make their own video game using the Kaboom.js library. The author highlights the challenges of making games, even with a simple Mario-clone, and the importance of involving children in the design process. They also provide recommendations for other parents or educators looking to make games with kids, such as involving them in the brainstorming process and making small, incremental changes to the game during development. The author's writing style is informative, engaging, and personal, reflecting their passion for teaching their children about programming and game development.
+
+========== 2024-02-16 13:59:29 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Your task is to generate a short summary of an article from a developer blog. You should capture the main points of the article and include important keywords.
+
+Summarize the article below, delimited by triple quotes, in a single sentence.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: In this article, the author describes their experience of teaching their five-year-old son how to make their own video game using the Kaboom.js library. Despite initial difficulties in setting up a local development environment and navigating the library's documentation, the author was able to involve their kids in the design process and make incremental changes to the game during each session. The author highlights the importance of involving children in the creative process and making visible changes to the game for them to enjoy. They also provide recommendations for other parents or educators looking to make games with their kids, including involving them in the design process and using Kaboom's types to simplify the development process.
+
+========== 2024-02-16 14:00:03 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Your task is to generate a short summary of an article from a developer blog. You should capture the main points of the article and include important keywords.
+
+Summarize the article below, delimited by triple quotes. Limit to 1 sentence.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: In this article, the author shares their experience of developing a video game with their five-year-old son using the Kaboom.js library. The author found it easy to get started with Kaboom and worked on the game with their son over several days. However, they noted that making games is complex and time-consuming, even with the help of a library like Kaboom. Despite the challenges, the author highlighted the importance of involving children in the design process and making small, incremental changes to keep them engaged. The author also recommended using Kaboom's types to help learn the library and import the necessary definitions. Overall, the author is enjoying the opportunity to spend quality time with their sons while learning how to make games together.
+
+========== 2024-02-16 14:01:30 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Your task is to generate a short summary of an article from a developer blog. You should capture the main points of the article and include important keywords.
+
+Summarize the article below in three bullet points.
+
+Then turn these bullet points into 1 sentence that summarizes the article.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Summary of the article:
+
+* The author wanted to make a video game with their five-year-old son and found the Kaboom.js library to be helpful in making the development process fun and easy for both of them.
+* Despite the initial excitement, the author realized that making games is actually quite complex and time-consuming, even with the aid of a library like Kaboom.
+* The author emphasizes the importance of involving children in the design process and making small, incremental changes to keep them engaged and motivated throughout the development process.
+
+Bullet points:
+
+* The author used the Kaboom.js library to make a Mario-clone game with their five-year-old son.
+* They found it easy to get started with the library but quickly realized that making games is a complex task.
+* The author recommends involving children in the design process and making small, incremental changes to keep them engaged and motivated throughout the development process.
+
+========== 2024-02-16 14:03:24 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Your task it to perform the following actions:
+1. Summarize the following article in three bullet points
+2. Turn these bullet points into 1 sentence that summarizes the article
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Bullet points:
+
+* The author's five-year-old son asked if they could make their own video game, which led the author to explore the Kaboom.js library for game development.
+* The author found the library easy to use and worked on the game with their sons, who were involved in designing the game and testing it.
+* The author notes that making games is hard, even with a library like Kaboom, but the experience of working on the game together with their sons has been enjoyable and rewarding.
+
+One sentence summary: The author used the Kaboom.js library to help their five-year-old son build a Mario-clone video game, finding it easy to use but also realizing that making games is a complex process that requires time and effort, but the experience of working on the project together with their sons has been enjoyable and rewarding.
+
+========== 2024-02-16 14:04:52 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Your task it to perform the following actions:
+1. Summarize the following article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Bullet points:
+
+* The author's son asked if they could make their own video game, and the author agreed to help
+* They used Kaboom.js, a JavaScript game programming library, to make the game
+* The author found it easy to get started with Kaboom, but making the game was still a complex process that required a lot of time and effort
+* The author enjoyed spending quality time with their kids while working on the game together
+
+Keywords:
+
+* Kaboom.js
+* Game programming library
+* Making games
+* Complexity
+* Quality time with kids
+
+ Sentence previewing the article content: "The author and their son used Kaboom.js to make a video game, but found that making games is still a complex process despite the ease of use provided by the library."
+
+========== 2024-02-16 14:05:45 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Your task it to perform the following actions:
+1. Summarize the following article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+You can use first person language when writing the final sentence.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Bullet points:
+
+* The author's son asked if they could make their own video game, and the author agreed to help
+* They used Kaboom.js, a JavaScript game programming library, to make the game
+* The author found it easy to get started with Kaboom, but making the game was still a complex process that required a lot of time and effort
+* The author enjoyed spending quality time with their kids while working on the game together
+
+Keywords:
+
+* Kaboom.js
+* Game programming library
+* Making games
+* Complexity
+* Quality time with kids
+
+Sentence previewing the article content: "In this article, I share my experience using Kaboom.js to help my son create his own video game, highlighting the challenges and rewards of making games together."
+
+========== 2024-02-16 14:06:42 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote a blog post and now you want to create a description for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Summary of the article:
+
+* The author wanted to make a video game with their five-year-old son and found an easy-to-use library called Kaboom.js that helped them build the game quickly and fun.
+* Despite the initial excitement, the author realized that making games is actually quite complex and time-consuming, even with a user-friendly library like Kaboom.
+* The author enjoyed spending quality time with their sons while working on the game together, and they plan to share the finished game when it's more polished.
+
+Keywords extracted from each bullet point:
+
+1. Video game
+2. Kaboom.js
+3. Game development
+4. Complexity
+5. Quality time
+6. Documentation
+7. Debugging
+8. Library
+9. User-friendly
+10. Finished game
+
+Concise sentence previewing the article content:
+"The author shares their experience of making a video game with their five-year-old son using the user-friendly Kaboom.js library, highlighting the complexity of game development and the enjoyable quality time spent with their sons during the process."
+
+========== 2024-02-16 14:07:24 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote a blog post and now you want to create a description for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+Use first-person language and a conversational tone. Remember: you wrote the article!
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Summary: In this blog post, the author shares their experience of making a video game with their five-year-old son using the Kaboom.js library. The author highlights the challenges of game development, including managing complex interactions and conditions, but also emphasizes the quality time spent with their children during the process. The author provides recommendations for others looking to make games with their kids, such as involving them in the design process and making small, incremental changes to the game.
+
+Keywords: Kaboom.js, game development, children, quality time, programming, library, tutorials, documentation, debugging, brainstorming, imagination.
+
+Preview sentence: The author shares their experience of making a video game with their five-year-old son using the Kaboom.js library, highlighting the challenges and rewards of the process.
+
+========== 2024-02-16 14:11:12 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote a blog post and now you want to create a description for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+You can use first person language when writing the final sentence.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Summary:
+
+* The author's son asked if they could make their own video game, and the author agreed to help.
+* They used Kaboom.js, a JavaScript game programming library, to make the game easy and fun to build.
+* Despite the challenges of making a game, the author enjoyed spending quality time with their kids and learned a lot from the process.
+
+Keywords:
+
+1. Kaboom.js
+2. Game development
+3. JavaScript programming
+4. Quality time with kids
+5. Learning through doing
+
+Preview sentence: With Kaboom.js, we were able to build a Mario-clone game with our kids, learning the basics of game development and spending valuable time together.
+Notes:       
+
+========== 2024-02-16 14:11:45 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+You can use first person language when writing the final sentence.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Summarized in three bullet points:
+
+* The author's five-year-old son asked if they could make their own video game, which led the author to explore the Kaboom.js library for game development.
+* The author found it easy to get started with Kaboom, but soon realized that making a game is a complex process that requires a lot of time and effort.
+* Despite the challenges, the author enjoyed spending quality time with their kids while working on the game together, and plans to share the game when it's more finished.
+
+Keywords extracted from each bullet point:
+
+1. Kaboom.js
+2. Game development
+3. Complex process
+4. Quality time
+5. Kids
+6. Library
+7. Development
+8. Easy
+9. Hard
+10. Finished
+
+Converting these keywords into a sentence that previews the article content:
+"The author uses Kaboom.js to teach their kids about game development, but quickly realizes that creating a game is a complex process that requires a lot of time and effort, despite enjoying the quality time spent with their children."
+Notes:       I cannot consistently get "I" language in the response.
+
+========== 2024-02-16 14:14:25 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote an article and now you want to create a preview for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+You can use first person language when writing the final sentence, like "I discovered a new way to..." or "I am learning about..."
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Summary:
+
+* The author wanted to make a video game with their five-year-old son and found an easy-to-use library called Kaboom.js.
+* They learned how to use the library and worked on the game together with their son, involving him in the design process and making small changes visible to keep him engaged.
+* The author recommends involving kids in the design process, making small incremental changes, and using Kaboom's types when developing.
+
+Keywords:
+
+1. Video game
+2. Kaboom.js
+3. Game development
+4. Parenting
+5. Children's involvement
+6. Learning
+7. Fun
+
+Preview sentence: I discovered a new way to spend quality time with my kids by making our own video game using the easy-to-use library Kaboom.js.
+	notes:       
+
+========== 2024-02-16 14:15:00 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote an article and now you want to create a preview for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point
+3. Convert those keywords into 1 sentence that previews the article content
+
+You can use first person language when writing the final sentence, like "I", "me", "my", etc.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Great! Here are three bullet points summarizing the article:
+
+* The author's five-year-old son asked if they could make their own video game, and the author agreed to help.
+* The author used Kaboom.js, a JavaScript game programming library, to help their son build the game.
+* Despite the challenges of making a game, the author enjoyed spending quality time with their sons and is looking forward to continuing the project as they grow.
+
+And here are the keywords extracted from each bullet point:
+
+* Video game
+* Kaboom.js
+* Game development
+* Quality time with kids
+
+Here's a sentence that previews the article content based on these keywords: "In this article, I share my experience helping my five-year-old son build his own video game using the Kaboom.js library, highlighting the challenges and rewards of working together on a creative project."
+	notes:       
+
+========== 2024-02-16 14:15:42 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote an article and now you want to create a preview for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point. Limit each bullet point to 1-2 keywords.
+3. Convert those keywords into 1 sentence that previews the article content
+
+You can use first person language when writing the final sentence, like "I", "me", "my", etc.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: Summarized in three bullet points:
+
+* The author's five-year-old son asked if they could make their own video game, which led the author to explore the Kaboom.js library for game development.
+* The author found the library easy to use and worked on the game with their sons, learning about game development and spending quality time together.
+* The author recommends involving children in the design process, making small changes, and using the Kaboom types when developing games with the library.
+
+Keywords extracted from each bullet point:
+
+* Game development
+* Kaboom.js
+* Children's involvement
+* Quality time
+
+Sentence previewing the article content: "I recently embarked on a fun and educational project with my five-year-old son, using the Kaboom.js library to create our own video game. Through this experience, I learned about the complexities of game development and enjoyed quality time with my kids."
+	notes:       
+
+========== 2024-02-16 14:16:14 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote an article and now you want to create a preview for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point. Limit each bullet point to 1-2 keywords.
+3. Convert those keywords into a sentence that previews the article content. Limit one sentence.
+
+You can use first person language when writing the final sentence, like "I", "me", "my", etc.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: 1. Summary:
+	* A father and his five-year-old son wanted to make their own video game together.
+	* They used Kaboom.js, a JavaScript game programming library, to help them build the game quickly and easily.
+	* The project took a week of development time, during which they learned about game development and had quality time together as a family.
+2. Keywords:
+	* Kaboom.js
+	* Game development
+	* Family bonding
+3. Preview sentence: "I recently spent a fun and educational week with my sons, learning how to make our own video game using the easy-to-use Kaboom.js library."
+	notes:       
+
+========== 2024-02-16 14:16:47 ==========
+	model:      llama2
+	temp:       0.0
+	prompt:     
+You wrote an article and now you want to create a preview for it.
+
+Your task it to perform the following actions:
+1. Summarize the article in three bullet points
+2. Extract the keywords from each bullet point. Limit each bullet point to 1-2 keywords.
+3. Convert those keywords into a concise sentence that previews the article content. Limit one sentence.
+
+You can use first person language when writing the final sentence, like "I", "me", "my", etc.
+
+Article: '''
+Last Saturday, my five-year-old son asked me “Can we make our own video game?” He asks a lot of “Can we make out own…” questions, and the practical answer is usually no. But I felt uniquely qualified to help with this one, so I said “Sure!”
+
+I turned to Kaboom.js, “a Javascript game programming library that helps you make games fast and fun.” I had some previous experience playing around with it in 2019 and knew that it would be a good option for what he wanted to build. Between the Kaboom playground and the Kaboom template on Replit, it was really easy to get started building the game.
+
+That said, we quickly outgrew online dev environments and wanted to move local. I created a new directory, npm inited, and then installed kaboom. I imported the library from an .html file, opened it with Live Server, and we were off to the races. With this setup, we worked on the game Saturday and after work a few days this week.
+
+The big takeaway from one week of development is that making games is hard! Even a Mario-clone is a complex application with a lot of conditions to manage and interactions to handle. Kaboom makes it easy, but it still takes a lot of time to build. I wish there were more examples in the Kaboom documentation; I’ve found a lot of detailed but outdated tutorials online and it’s hard to sift through what still works and what depends on old APIs.
+
+But more importantly, building the game has meant a lot of quality time with my kids. Although the project started with my older son and me, we where quickly joined by my three-year-old son. Both boys really enjoy working on the game together, even though most of the time is spent with me reading the documentation and debugging issues. But doing it with them on my lap is a wonderful experience. I’m looking forward to building more with them as they grow.
+
+If you are interested in making a game with your kids or nieces/nephews or students, here are some recommendations:
+
+Involve your kids as much as possible in designing the game: Let their imagination run wild, and then figure out how to make it a reality later. If they’re stuck, guide them through the brainstorming process, and have paper and pencils handy for their designs.
+Make small, incremental, and visible changes: It can be really tempting when you’re working in a new library to refactor old code when you learn new things. But for the sake of the kids, make sure to have something different about the game that they can see after each session. And give them lots of chances to play the game during and after coding.
+Use Kaboom’s types when you’re developing: Kaboom adds a ton of global functions, and it is challenging to learn what they are and how to use them. Thankfully, the library includes type definitions that help with this. A bundler like Vite would probably bring in those types automatically, but if you (like me) want to keep things simple you can import the types with a JSDoc @typedef comment like this:
+/** @typedef { import("./node_modules/kaboom/dist/global") } */
+import kaboom from "./node_modules/kaboom/dist/kaboom.mjs";
+When the game is in a more finished state, I’ll be happy to share it. But in the meantime, I’m just going to enjoy the opportunity to use my talents to spend extra time with my sons.
+'''
+
+	completion: 1. Summary of the article:
+	* The author wanted to make a video game with their 5-year-old son but faced challenges due to the complexity of game development.
+	* They used Kaboom.js, a game programming library, to help them build the game quickly and easily.
+	* Despite the challenges, the author enjoyed spending quality time with their sons while working on the game together.
+2. Keywords extracted from each bullet point:
+	* Game development
+	* Kaboom.js
+	* Complexity
+	* Quality time with kids
+3. Concisely summarizing the article content in one sentence:
+Using Kaboom.js, I was able to build a video game with my 5-year-old son, despite the complexity of game development, and enjoyed quality time with him throughout the process.
+	notes:       
+
