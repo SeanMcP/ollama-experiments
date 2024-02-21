@@ -6,5 +6,5 @@
 
 1. [Download Ollama](https://ollama.com/download)
 2. Install Ollama application
-3. Run Ollama: `ollama run llama2`
+3. Run Ollama: `ollama run mistral`
 4. Run python scripts, _e.g._ `python3 completion.py`

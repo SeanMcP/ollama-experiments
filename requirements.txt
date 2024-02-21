@@ -20,7 +20,7 @@ flake8==6.1.0
 greenlet==2.0.2
 h11==0.14.0
 httpcore==1.0.3
-httpx==0.26.0
+httpx==0.25.2
 idna==3.4
 importlib-metadata==6.8.0
 iso8601==2.0.0
@@ -30,6 +30,7 @@ keepercommander==16.5.18
 lxml==4.9.3
 mccabe==0.7.0
 mypy-extensions==1.0.0
+ollama==0.1.6
 openai==1.12.0
 packaging==23.2
 pathspec==0.12.1
