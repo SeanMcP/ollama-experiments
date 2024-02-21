@@ -12,7 +12,7 @@ def get_timestamp():
     now = datetime.now()
     return now.strftime('%Y-%m-%d %H:%M:%S')
 
-def get_completion(prompt, model="llama2", temperature=0.0):
+def get_completion(prompt, model, temperature=0.0):
     messages = [{"role": "user", "content": prompt}]
     response = client.chat.completions.create(
         model=model,
