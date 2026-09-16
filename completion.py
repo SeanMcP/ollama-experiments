@@ -24,9 +24,14 @@ def get_completion(prompt, model):
 # ==============================================================================
 
 prompt = f"""
-I am working on -2(4+x) =8. I got it to -8+2x=8, but I'm not sure what to do next.
+Given the following Common Core standard and student grade level, create a \
+short reading passage at the appropriate reading level and questions for every \
+part of the standard to assess student mastery of the standard.
+
+Grade Level: 3
+Standard: CCSS.ELA-LITERACY.CCRA.R.1 Read closely to determine what the text says explicitly and to make logical inferences from it; cite specific textual evidence when writing or speaking to support conclusions drawn from the text.
 """
 
-response = get_completion(prompt, model="wizard-math")
+response = get_completion(prompt, model="gemma")
 
 print(response)
